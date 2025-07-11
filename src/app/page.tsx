@@ -1,9 +1,8 @@
 
-
-export default function Home() {
+export default function WelcomePage() {
   return (
     <div>
-      <p></p>
+      <h1>welcome-page</h1>
     </div>
   );
 }
