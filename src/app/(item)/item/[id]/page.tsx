@@ -1,5 +1,6 @@
 import Sidebar from "@/components/sidebar";
 import FilledButton from "@/components/filled-button";
+import Link from "next/link";
 
 export default function Item() {
   return (
@@ -40,12 +41,15 @@ export default function Item() {
             >
               +
             </FilledButton>
+
+            <Link href="/restaurant/1" >
             <FilledButton
               colorClass="bg-red-600 hover:bg-red-700 text-white"
               className="w-56 h-12 text-lg font-semibold cursor-pointer pt-1"
             >
               Adicionar R$ 20,00
             </FilledButton>
+            </Link>
             </div>
           </div>
         </div>
