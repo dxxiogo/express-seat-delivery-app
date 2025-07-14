@@ -2,24 +2,26 @@
 
 import React, { ReactNode, ButtonHTMLAttributes } from 'react';
 
-type RedButtonProps = {
+type FilledButtonProps = {
   children?: ReactNode;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
   loading?: boolean;
   type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
   className?: string;
+  colorClass?: string; // NOVA PROP PARA CLASSES DE COR
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const RedButton = ({ 
+const FilledButton = ({ 
   children = 'Entrar', 
   onClick, 
   disabled = false,
   loading = false,
   type = 'button',
   className = '',
+  colorClass = 'bg-red-600 hover:bg-red-700 text-white', // padrão vermelho
   ...props 
-}: RedButtonProps) => {
+}: FilledButtonProps) => {
   return (
     <button
       type={type}
@@ -27,15 +29,14 @@ const RedButton = ({
       disabled={disabled || loading}
       className={`
         w-full px-6 py-3 
-        bg-red-600 hover:bg-red-700 
-        active:bg-red-800 
-        disabled:bg-red-400 disabled:cursor-not-allowed
-        text-white font-medium text-sm
+        font-medium text-sm
         rounded-lg
         transition-all duration-200
-        focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2
+        focus:outline-none focus:ring-2 focus:ring-offset-2
         shadow-sm hover:shadow-md
+        disabled:bg-red-400 disabled:cursor-not-allowed
         ${loading ? 'cursor-wait' : ''}
+        ${colorClass}
         ${className}
       `}
       {...props}
@@ -52,4 +53,4 @@ const RedButton = ({
   );
 };
 
-export default RedButton;
+export default FilledButton;
