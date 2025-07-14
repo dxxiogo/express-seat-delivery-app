@@ -19,8 +19,8 @@ const Sidebar = ({ onNavigation }: SidebarProps) => {
   const router = useRouter();
 
   const navItems: NavItem[] = [
-    { icon: Home, label: 'Home', href: '/' },
-    { icon: ShoppingCart, label: 'Carrinho', href: '/carrinho' },
+    { icon: Home, label: 'Home', href: '/home' },
+    { icon: ShoppingCart, label: 'Carrinho', href: '/order' },
     { icon: Search, label: 'Buscar', href: '/buscar' },
     { icon: CreditCard, label: 'Pagamentos', href: '/pagamentos' },
     { icon: FileText, label: 'Documentos', href: '/documentos' },
@@ -38,7 +38,7 @@ const Sidebar = ({ onNavigation }: SidebarProps) => {
   };
 
   return (
-    <nav className="w-16 bg-red-600 flex flex-col items-center py-4 h-full shadow-lg">
+    <nav className="w-16 bg-red-600 flex flex-col items-center py-4 h-full shadow-lg z-30">
       <div className="flex flex-col items-center space-y-6 flex-1">
         {navItems.slice(0, -1).map((item, index) => {
           const IconComponent = item.icon;
@@ -64,7 +64,7 @@ const Sidebar = ({ onNavigation }: SidebarProps) => {
                 bg-gray-900 text-white text-sm rounded-md 
                 opacity-0 group-hover:opacity-100 
                 transition-opacity duration-200 
-                whitespace-nowrap z-20 pointer-events-none
+                whitespace-nowrap z-50 pointer-events-none
                 before:content-[''] before:absolute before:right-full 
                 before:top-1/2 before:-translate-y-1/2 
                 before:border-4 before:border-transparent 
@@ -96,7 +96,7 @@ const Sidebar = ({ onNavigation }: SidebarProps) => {
             bg-gray-900 text-white text-sm rounded-md 
             opacity-0 group-hover:opacity-100 
             transition-opacity duration-200 
-            whitespace-nowrap z-20 pointer-events-none
+            whitespace-nowrap z-50 pointer-events-none
             before:content-[''] before:absolute before:right-full 
             before:top-1/2 before:-translate-y-1/2 
             before:border-4 before:border-transparent 

@@ -15,25 +15,23 @@ export default function Home() {
 
         <section className="mt-8 px-8">
           <h2 className="text-xl font-bold mb-4">Melhores avaliados</h2>
-          <div className="flex gap-4 overflow-x-auto">
-            <Link href="/item/1">
-            <ItemPreview />
-            </Link>
-            <ItemPreview />
-            <ItemPreview />
-            <ItemPreview />
+          <div className="flex gap-4 overflow-x-auto  ">
+            {[1, 2, 3, 4].map((id) => (
+              <Link key={id} href={`/restaurant/${id}`} className="block">
+                <ItemPreview />
+              </Link>
+            ))}
           </div>
         </section>
 
         <section className="mt-8 px-8">
           <h2 className="text-xl font-bold mb-4">Melhores avaliados</h2>
           <div className="flex gap-4 overflow-x-auto">
-            <Link href="/restaurant/1">
-            <RestaurantPreview />
-            </Link>
-            <RestaurantPreview />
-            <RestaurantPreview />
-            <RestaurantPreview />
+            {[1, 2, 3, 4].map((id) => (
+              <Link key={id} href={`/restaurant/${id}`} className="block">
+                <RestaurantPreview />
+              </Link>
+            ))}
           </div>
         </section>
       </div>
