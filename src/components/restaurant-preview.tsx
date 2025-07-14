@@ -3,7 +3,7 @@ import { ChevronRight, Star } from 'lucide-react';
 
 const restaurantPreview = () => {
   return (
-    <div className="flex bg-white rounded-xl shadow-md overflow-hidden w-full max-w-sm border border-gray-100">
+    <div className="flex w-3/4  bg-white rounded-xl shadow-md overflow-hidden   border border-gray-100">
       <div className="bg-black flex items-center justify-center p-4 w-24 flex-shrink-0">
         <div className="text-white text-center">
           
